@@ -17,18 +17,18 @@
 
 #### 虚拟机安装  
 * 下载系统对应镜像文件  
- * Kali: kali-linux-2020.3-installer-amd64.iso  
- * Debian: debian-10.5.0-amd64-netinst.iso  
- * xp-sp3: zh-hans_windows_xp_professional_with_service_pack_3_x86_cd_vl_x14-74070.iso  
+  * Kali: kali-linux-2020.3-installer-amd64.iso  
+  * Debian: debian-10.5.0-amd64-netinst.iso  
+  * xp-sp3: zh-hans_windows_xp_professional_with_service_pack_3_x86_cd_vl_x14-74070.iso  
 * 分别进行首次安装系统  
- * [Debian安装参照文档](https://phoenixnap.com/kb/how-to-install-debian-10-buster)  
- * xp序列号 dg8fv-b9tky-frt9j-6crcc-xpq4g  
+  * [Debian安装参照文档](https://phoenixnap.com/kb/how-to-install-debian-10-buster)  
+  * xp序列号 dg8fv-b9tky-frt9j-6crcc-xpq4g  
 * 配置多重加载  
- * 管理-虚拟介质管理  
+  * 管理-虚拟介质管理  
   ![1](./image/1.jpg)  
- * 属性-类型-多重加载-应用  
+  * 属性-类型-多重加载-应用  
   ![2](./image/2.jpg)  
- * 新建虚拟机时选择使用已有的虚拟硬盘文件  
+  * 新建虚拟机时选择使用已有的虚拟硬盘文件  
   ![3](./image/3.jpg)  
 
 #### 网络环境配置  
@@ -41,33 +41,31 @@ Internal1——KKK/XPprofessional
 Internal2——DEBIAN-2/XP2  
 ![5](./image/5.jpg)
 * 配置过程  
- 1. 配置虚拟机Host-Only网卡  
+  1. 配置虚拟机Host-Only网卡  
  管理-主机网络管理  
 ![6](./image/6.jpg)  
- 2. 配置网关网卡  
+  2. 配置网关网卡  
 ![7](./image/7.jpg)  
 发现网卡2、3、4均没有获得IP地址  
 更改`/etc/network/interfaces`配置 [更改参考](https://gist.github.com/c4pr1c3/8d1a4550aa550fabcbfb33fad9718db1)  
 `systemctl restart networking`重启网络服务  
 ![8](./image/8.jpg)
- 3. 网关安装dnsmasq服务器  
+  3. 网关安装dnsmasq服务器  
 `apt update && apt install dnsmasq`下载安装  
 更改`/etc/dnsmasq.conf`配置 [更改参考](https://gist.github.com/c4pr1c3/8d1a4550aa550fabcbfb33fad9718db1)  
 `systemctl restart dnsmasq`重新启动  
 ![29](./image/29.jpg)
- 4. 配置靶机  
-intnet1:
-     * XPprofessional:  
+  4. 配置靶机  
+     * XPprofessional(intnet1):  
 ![9](./image/9.jpg)  
 ![10](./image/10.jpg)  
-     * KKK:  
+     * KKK(intnet1):  
 ![11](./image/11.jpg)  
 ![12](./image/12.jpg)  
-intnet2:  
-     * XP2:  
+     * XP2(intnet2):  
 ![13](./image/13.jpg)  
 ![14](./image/14.jpg)  
-     * DEBIAN-2:  
+     * DEBIAN-2(intnet2):  
 ![15](./image/15.jpg)  
 ![16](./image/16.jpg)  
 
@@ -104,11 +102,12 @@ intnet2-DEBIAN-2:
 ![28](./image/28.jpg)  
 
 ### tips:  
+
 1. 网卡切换NAT网络时显示无效设置  
 管理-全局设定-网络-添加新NAT网络  
 ![31](./image/31.jpg)  
 2. XP系统网卡  
-选择千兆网卡可以继续完成后续所有实验  
+选择千兆网卡即可完成后续所有实验，不必使用百兆网卡  
 ![32](./image/32.jpg)
 
 
