@@ -88,14 +88,12 @@
     ![没有回应](./image/没有回应.png)  
     分析：TCP三次握手机制，攻击者主机向靶机发送连接请求后，没有得到任何响应，抓包结果与预期结果一致。  
 * 攻击者主机`nmap`复刻  
-  * Closed  
   `sudo nmap -sT -p 80 172.16.111.143`  
+  * Closed  
   ![Closed](./image/nmapclose.png)  
   * Open  
-  `sudo nmap -sT -p 80 172.16.111.143`  
   ![Open](./image/nmapopen.png)  
   * Filtered  
-  `sudo nmap -sT -p 80 172.16.111.143`  
   ![Filtered](./image/nmapfilter.png)  
 
 * TCP stealth scan  
@@ -128,14 +126,12 @@
   ![stealthfilter](./image/stealthfilter.png)  
   ![Wireshark](./image/stealthfilterWireshark.png)  
 * 攻击者主机`nmap`复刻  
-  * Open  
   `sudo nmap -sS -p 80 172.16.111.143`  
+  * Open  
   ![steanmapopen](./image/steanmapopen.png)  
   * Closed  
-  `sudo nmap -sS -p 80 172.16.111.143`  
   ![steanmapclose](./image/steanmapclose.png)  
   * Filtered  
-  `sudo nmap -sS -p 80 172.16.111.143`  
   ![steanmapfilter](./image/steanmapfilter.png)  
 
 * TCP Xmas scan  
@@ -167,14 +163,12 @@
   ![Wireshark](./image/xmasfilterWireshark.png)  
   分析：Xmas发送TCP请求，在靶机端口被过滤状态下，靶机无响应，抓包结果与预期结果一致。  
 * 攻击者主机`nmap`复刻  
-  * Closed  
   `sudo nmap -sX -p 80 172.16.111.143`  
+  * Closed  
   ![xmasnmapclose](./image/xmasnmapclose.png)  
   * Open  
-  `sudo nmap -sX -p 80 172.16.111.143`  
   ![xmasnmapopen](./image/xmasnmapopen.png)  
   * Filtered  
-  `sudo nmap -sX -p 80 172.16.111.143`  
   ![xmasnmapfilter](./image/xmasnmapfilter.png)  
 
 * TCP fin scan  
