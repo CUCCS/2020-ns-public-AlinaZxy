@@ -34,7 +34,7 @@
 
 * 端口状态模拟  
   1. 关闭状态  
-  `sudo ufw disable` 
+  `sudo ufw disable`  
   `systemctl stop apache2`  
   `systemctl stop dnsmasq` 关闭端口  
   2. 开放状态  
@@ -89,7 +89,7 @@
     分析：TCP三次握手机制，攻击者主机向靶机发送连接请求后，没有得到任何响应，抓包结果与预期结果一致。  
 * 攻击者主机`nmap`复刻  
   * Closed  
-  `sudo nmap -sT -p 80 172.16.111.143`
+  `sudo nmap -sT -p 80 172.16.111.143`  
   ![Closed](./image/nmapclose.png)  
   * Open  
   `sudo nmap -sT -p 80 172.16.111.143`  
@@ -129,13 +129,13 @@
   ![Wireshark](./image/stealthfilterWireshark.png)  
 * 攻击者主机`nmap`复刻  
   * Open  
-  `sudo nmap -sS -p 80 172.16.111.143`
+  `sudo nmap -sS -p 80 172.16.111.143`  
   ![steanmapopen](./image/steanmapopen.png)  
   * Closed  
-  `sudo nmap -sS -p 80 172.16.111.143`
+  `sudo nmap -sS -p 80 172.16.111.143`  
   ![steanmapclose](./image/steanmapclose.png)  
   * Filtered  
-  `sudo nmap -sS -p 80 172.16.111.143`
+  `sudo nmap -sS -p 80 172.16.111.143`  
   ![steanmapfilter](./image/steanmapfilter.png)  
 
 * TCP Xmas scan  
@@ -210,7 +210,7 @@
   ![finnmapclose](./image/finnmapclose.png)  
   * Open  
   ![finnmapopen](./image/finnmapopen.png)  
-  * Filtered
+  * Filtered  
   ![finnmapfilter](./image/finnmapfilter.png)  
 
 * TCP null scan  
@@ -293,7 +293,7 @@
 
 ### 问题及解决  
 1. 攻击者主机中python代码运行失败  
-![python运行失败](./image/python运行失败.png)
+![python运行失败](./image/python运行失败.png)  
 错误原因：权限不够  
 解决方案：改为`sudo python3 tcpconnect.py` 运行  
 2. 靶机`sudo ufw disable`无法关闭 tcp/80 端口  
