@@ -46,7 +46,7 @@
 
 
 * TCP connect scan  
-  ```
+  ```python
   #攻击者主机编写TCPconnect.py
   from scapy.all import *
   def tcpconnect(dst_ip,dst_port,timeout=10):
@@ -98,7 +98,7 @@
 
 * TCP stealth scan  
 原理与TCP connect scan类似
-  ```
+  ```python
   #攻击者主机编写tcpstealth.py
   from scapy.all import *
   def tcpstealthscan(dst_ip , dst_port , timeout = 10):
@@ -135,7 +135,7 @@
   ![steanmapfilter](./image/steanmapfilter.png)  
 
 * TCP Xmas scan  
-  ```  
+  ```python  
   #攻击者主机编写tcpxmas.py
   from scapy.all import *
   def Xmasscan(dst_ip , dst_port , timeout = 10):
@@ -173,7 +173,7 @@
 
 * TCP fin scan  
 原理与TCP Xmas scan类似  
-  ```
+  ```python
   #攻击者主机编写tcpfin.py
   from scapy.all import *
   def finscan(dst_ip , dst_port , timeout = 10):
@@ -209,7 +209,7 @@
 
 * TCP null scan  
 原理与TCP Xmas scan类似  
-  ```
+  ```python
   #攻击者主机编写tcpnull.py
   from scapy.all import *
   def nullscan(dst_ip , dst_port , timeout = 10):
@@ -245,7 +245,7 @@
   ![nullnmapopen](./image/nullnmapopen.png)  
 
 * UDP scan  
-  ```
+  ```python
   #攻击者主机编写udp.py
   from scapy.all import *
   def udpscan(dst_ip,dst_port,dst_timeout = 10):
