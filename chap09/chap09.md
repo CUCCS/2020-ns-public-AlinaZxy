@@ -60,7 +60,7 @@ snort -q -A console -b -i eth1 -c /etc/snort/snort.conf -l /var/log/snort/
 
 #### 实验三：自定义snort规则  
 
-```
+ ```
 # 新建自定义 snort 规则文件
 cat << EOF > /etc/snort/rules/cnss.rules
 alert tcp \$EXTERNAL_NET any -> \$HTTP_SERVERS 80 (msg:"Access Violation has been detected on /etc/passwd ";flags: A+; content:"/etc/passwd"; nocase;sid:1000001; rev:1;)
@@ -107,8 +107,8 @@ snort -q -A fast -b -i enp0s3 -c /etc/snort/snort.conf -l /var/log/snort/
 root@alina:~/down/guardian# iptables -L -n
 Chain INPUT (policy ACCEPT)
 target     prot opt source               destination
-REJECT     tcp  --  172.16.111.1       0.0.0.0/0            reject-with tcp-reset
-DROP       all  --  172.16.111.1       0.0.0.0/0
+REJECT     tcp  --  172.16.222.1       0.0.0.0/0            reject-with tcp-reset
+DROP       all  --  172.16.222.1       0.0.0.0/0
 
 Chain FORWARD (policy ACCEPT)
 target     prot opt source               destination
