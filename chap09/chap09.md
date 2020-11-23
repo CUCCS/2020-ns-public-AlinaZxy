@@ -82,7 +82,7 @@ snort -q -A fast -b -i enp0s3 -c /etc/snort/snort.conf -l /var/log/snort/
 
 #### 实验四：和防火墙联动  
 本实验需要用到的脚本代码[Guardian-1.7.tar.gz](https://c4pr1c3.github.io/cuc-ns/chap0x09/attach/guardian.tar.gz)  
-
+本实验网络拓扑环境：  
 ![网络拓扑](./image/网络拓扑.png)  
 snort所在主机  
 ```
